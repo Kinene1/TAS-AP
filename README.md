@@ -7,7 +7,9 @@ The pipeline can be run either as a script or through a graphical user interface
 
 ## **installation**
 A pre-compiled Linux x86-64 binary is provided for straightforward setup. Download and extract the tarball, then run the installation script in the terminal as shown below:
-<pre> Wget https://github.com/Kinene1/TAS-AP/releases/download/v1.0.0/tas_ap_v1.0.0-linux-x86-64-binaries.tar.gz
+
+<pre> 
+  wget https://github.com/Kinene1/TAS-AP/releases/download/v1.0.0/tas_ap_v1.0.0-linux-x86-64-binaries.tar.gz
   tar -xvf tas_ap_v1.0.0-linux-x86-64-binaries.tar.gz
   cd tas_ap_v1.0.0-linux-x86-64-binaries
   bash install.sh
