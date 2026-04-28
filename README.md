@@ -5,7 +5,7 @@ It integrates established ARTIC bioinformatics workflows with Nextstrain phyloge
 
 The pipeline can be run either as a script or through a graphical user interface (GUI). The graphical user interface (GUI) allows users to customise key pipeline parameters, monitor progress, and access outputs without command-line interaction, while a full command-line mode remains available for advanced users. 
 
-## **installation**
+## **Installation**
 A pre-compiled Linux x86-64 binary is provided for straightforward setup. Download and extract the tarball, then run the installation script in the terminal as shown below:
 
 <pre> 
@@ -14,3 +14,9 @@ A pre-compiled Linux x86-64 binary is provided for straightforward setup. Downlo
   cd tas_ap_v1.0.0-linux-x86-64-binaries
   bash install.sh
 </pre>
+
+The installation script will:
+•	Create and configure the required Conda environment
+•	Install all pipeline dependencies
+•	Set executable permissions
+•	Generate a desktop launcher for the TAS-AP GUI
