@@ -1,5 +1,7 @@
+<h1>
+  <img src="tas_icon.png" alt="Logo" width="40" style="vertical-align: middle;"/>
 # **Targeted Amplicon Sequencing Analysis Pipeline (*TAS-AP*)**
-
+</h1>
 TAS-AP is a user-friendly desktop application for analysing Nanopore targeted amplicon sequencing data across any supported primer scheme.
 It integrates established ARTIC bioinformatics workflows with Nextstrain phylogenetic analysis, providing an end-to-end solution from read processing to tree visualisation.
 
@@ -20,7 +22,4 @@ The installation script will:
 •	-Install all pipeline dependencies
 •	-Set executable permissions
 •	-Generate a desktop launcher for the TAS-AP GUI
-<h1>
-  <img src="tas_icon.png" alt="Logo" width="40" style="vertical-align: middle;"/>
-  My Project
-</h1>
+
