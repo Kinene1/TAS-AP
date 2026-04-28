@@ -24,3 +24,8 @@ The installation script will:
 •	-Set executable permissions
 •	-Generate a desktop launcher for the TAS-AP GUI
 
+<p align="center">
+  <img src="logo.png" alt="Logo" width="150"/>
+</p>
+
+<h1 align="center">My Project</h1>
