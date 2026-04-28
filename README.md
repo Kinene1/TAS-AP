@@ -25,7 +25,7 @@ The installation script will:
 •	-Generate a desktop launcher for the TAS-AP GUI
 
 <p align="center">
-  <img src="logo.png" alt="Logo" width="150"/>
+  <img src="tas_icon.png" alt="Logo" width="150"/>
 </p>
 
-<h1 align="center">My Project</h1>
+<h1 align="center">Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)</h1>
