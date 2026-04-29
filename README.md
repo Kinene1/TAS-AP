@@ -2,7 +2,7 @@
 <h1 align="center">
   <span style="display: inline-flex; align-items: center; gap: 10px;">
     <img src="tas_icon.png" alt="Logo" width="140"/>
-    <span style="position: relative; top: -12px;">
+    <span style="position: relative; top: -120px;">
       Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)
     </span>
   </span>
