@@ -25,3 +25,7 @@ The installation script will:
 - Set executable permissions
 - Generate a desktop launcher for the TAS-AP GUI
 
+<h1>
+  <img src="tas_icon.png" alt="Logo" width="40" style="vertical-align: middle;"/>
+  Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)
+</h1>
