@@ -20,8 +20,8 @@ A pre-compiled Linux x86-64 binary is provided for straightforward setup. Downlo
 </pre>
 
 The installation script will:
-•	- Item 1 Create and configure the required Conda environment
-•	- Item two Install all pipeline dependencies
-•	- Item three Set executable permissions
-•	- Item Generate a desktop launcher for the TAS-AP GUI
+- Item 1 Create and configure the required Conda environment
+- Item two Install all pipeline dependencies
+- Item three Set executable permissions
+- Item Generate a desktop launcher for the TAS-AP GUI
 
