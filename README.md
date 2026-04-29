@@ -1,13 +1,8 @@
 
 
-
 <h1 align="center">
-  <span style="display: inline-flex; align-items: center; gap: 10px;">
-    <img src="tas_icon.png" alt="Logo" width="140" style="margin-top: 15px;"/>
-    <span>
-      Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)
-    </span>
-  </span>
+  <img src="tas_icon.png" alt="Logo" width="140" style="vertical-align: middle; margin-top: 15px;"/>
+  Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)
 </h1>
 
 TAS-AP is a user-friendly desktop application for analysing Nanopore targeted amplicon sequencing data across any supported primer scheme.
