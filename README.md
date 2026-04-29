@@ -1,8 +1,8 @@
-<p align="center">
-  <img src="tas_icon.png" alt="Logo" width="150"/>
-</p>
-
 <h1 align="center">Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)</h1>
+
+<p align="center">
+  <img src="tas_icon.png" alt="Logo" width="120"/>
+</p>
 
 TAS-AP is a user-friendly desktop application for analysing Nanopore targeted amplicon sequencing data across any supported primer scheme.
 It integrates established ARTIC bioinformatics workflows with Nextstrain phylogenetic analysis, providing an end-to-end solution from read processing to tree visualisation.
@@ -29,3 +29,36 @@ The installation script will:
   <img src="tas_icon.png" alt="Logo" width="140" style="vertical-align: middle;"/>
   Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)
 </h1>
+
+
+<h1 align="center">
+  <span style="display: inline-flex; align-items: center; gap: 10px;">
+    <img src="tas_icon.png" alt="Logo" width="140"/>
+    <span>Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)</span>
+  </span>
+</h1>
+
+
+<h1 align="center">
+  My
+  <img src="tas_icon.png" alt="Logo" width="140" style="vertical-align: middle; margin: 0 8px;"/>
+  Project
+</h1>
+
+<p align="center">
+  <img src="tas_icon.png" alt="Logo" width="80" style="display: block; margin: 0 auto;" />
+</p>
+
+<p align="center">
+  My Project is a powerful tool that helps developers build modern applications quickly and efficiently with clean and scalable architecture.
+</p>
+
+
+
+
+
+<p align="center">
+  <img src="tas_icon.png" alt="Logo" width="150"/>
+</p>
+
+<h1 align="center">Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)</h1>
