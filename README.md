@@ -1,9 +1,10 @@
-<h1 align="center">Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)</h1>
 
-<p align="center">
-  <img src="tas_icon.png" alt="Logo" width="120"/>
-</p>
-
+<h1 align="center">
+  <span style="display: inline-flex; align-items: center; gap: 10px;">
+    <img src="tas_icon.png" alt="Logo" width="140"/>
+    <span>Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)</span>
+  </span>
+</h1>
 TAS-AP is a user-friendly desktop application for analysing Nanopore targeted amplicon sequencing data across any supported primer scheme.
 It integrates established ARTIC bioinformatics workflows with Nextstrain phylogenetic analysis, providing an end-to-end solution from read processing to tree visualisation.
 
@@ -62,3 +63,8 @@ The installation script will:
 </p>
 
 <h1 align="center">Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)</h1>
+<h1 align="center">Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)</h1>
+
+<p align="center">
+  <img src="tas_icon.png" alt="Logo" width="120"/>
+</p>
