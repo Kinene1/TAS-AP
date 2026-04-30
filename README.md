@@ -1,3 +1,8 @@
+## Table of Contents
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+
 <h1 align="center">
   <span style="display: inline-flex; align-items: center; gap: 12px;">
     <img src="tas_icon.png" alt="Logo" width="100" style="margin-top: 8px;"/>
@@ -31,7 +36,7 @@ Once the installation completes, TAS-AP can be started either from the desktop i
 To launch the GUI, open **Show Applications**, click on “**Type to search**”, and enter **TAS Analysis Pipeline**.
 When the application appears in the results, click the icon to start the GUI.
 
-<h2> Running the TAS-AP remotely </h2>
+## <h2> Running the TAS-AP remotely </h2>
 If you are accessing the application on a remote system, open a terminal and launch the GUI with one of the following commands:
 <pre>
   cd tas_ap_v1.0.0-linux-x86-64-binaries
@@ -45,7 +50,7 @@ or
 </pre>
 This will open the TAS-AP GUI, allowing you to load the required inputs and run the pipeline.
 
-<h3> Running TAS-AP on a Dataset </h3>
+## <h3> Running TAS-AP on a Dataset </h3>
 
 1.	**Select the input FASTQ directory**.
 
@@ -112,7 +117,7 @@ In this case:
 - Open https://auspice.us/ in a web browser.
 - Drag and drop the `auspice.json` file to visualise the tree. <br>
 
-In the tree, newly generated samples (marked ✅ Passed in the pdf report) are highlighted in grey, allowing them to be distinguished from background taxa.
+In the tree, newly generated samples (marked ✅ Passed in the PDF report) are highlighted in grey, allowing them to be distinguished from background taxa.
 
 9.  **Exiting TAS-AP**
     Click Exit in the GUI to close the application.
