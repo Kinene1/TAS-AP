@@ -76,5 +76,51 @@ This will open the TAS-AP GUI, allowing you to load the required inputs and run 
     After all inputs are set, click **Run Pipeline** to start the analysis. <br>
     The GUI will display progress and generate outputs once processing is complete.
 
+<figure>
+  <img src="./tas-ap_GUI.png" alt="My Image">
+  <figcaption>Figure 1: The GUI of the TAS-AP </figcaption>
+</figure>
 
-      
+
+
+**ARTIC Processing and report generation**
+
+Running the pipeline executes ARTIC MinION, which generates consensus sequences and a PDF report. The report can be opened directly from the TAS-AP GUI by clicking **View Report**.
+Samples marked ✅ Passed in the coverage summary report are automatically selected for downstream phylogenetic analysis.
+
+**Note:** All outputs from the main pipeline are written to the `guppyplex_results` directory.
+This directory contains the consensus FASTA files and other inputs required for the phylogeny step. <br>
+
+8.  **Phylogenetic Analysis Pipeline.** <br>
+
+Before running the phylogenetic analysis, ensure that the `tree_augur` directory is located in the same parent directory as your `fastq_pass` directory.
+The `tree_augur` directory must contain the base alignment and the required **Auspice configuration files**. <br>
+
+Then: <br>
+-	Click the Phylogeny button in the TAS-AP GUI.
+This will run the phylogenetic workflow and start the **Auspice server**.
+
+-	Once the server is running, click **View Tree** to open and explore the interactive phylogeny.
+
+**Remote access** <br>
+
+If you are running TAS-AP remotely, the browser may not open automatically. <br>
+
+In this case:
+- Navigate to the results directory
+- Copy the file `auspice.json` to your local machine.
+- Open https://auspice.us/ in a web browser.
+- Drag and drop the `auspice.json` file to visualise the tree. <br>
+
+In the tree, newly generated samples (marked ✅ Passed in the pdf report) are highlighted in grey, allowing them to be distinguished from background taxa.
+
+9.  **Exiting TAS-AP**
+    Click Exit in the GUI to close the application.
+
+10.  **Re-running Analyses** 
+     <br>
+-  Re-run phylogeny only: Click Phylogeny again.  <br>
+-  Navigate to the directory containing your `fastq_pass` directory and delete the following output directories:  <br>
+     
+     <pre> rm -r  results/ guppyplex_results/ </pre>
+Then repeat the steps from Section 1 to start a fresh analysis.
