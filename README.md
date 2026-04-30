@@ -1,7 +1,3 @@
-## Table of Contents
-- [Overview](#overview)
-- [Installation](#installation)
-- [Usage](#usage)
 
 <h1 align="center">
   <span style="display: inline-flex; align-items: center; gap: 12px;">
@@ -11,6 +7,8 @@
     </span>
   </span>
 </h1>
+
+## **Overview** 
 
 TAS-AP is a user-friendly desktop application for analysing Nanopore targeted amplicon sequencing data across any supported primer scheme.
 It integrates established ARTIC bioinformatics workflows with Nextstrain phylogenetic analysis, providing an end-to-end solution from read processing to tree visualisation.
