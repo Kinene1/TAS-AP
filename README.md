@@ -11,7 +11,7 @@
 ## **Overview** 
 
 TAS-AP is a user-friendly desktop application for analysing Nanopore targeted amplicon sequencing data across any supported primer scheme.
-It integrates established ARTIC bioinformatics workflows with Nextstrain phylogenetic analysis, providing an end-to-end solution from read processing to tree visualisation.
+It integrates established [ARTIC bioinformatics workflows](https://github.com/artic-network/fieldbioinformatics) with [Nextstrain phylogenetic analysis](https://github.com/nextstrain), providing an end-to-end solution from read processing to tree visualisation.
 
 The pipeline can be run either as a script or through a graphical user interface (GUI). The graphical user interface (GUI) allows users to customise key pipeline parameters, monitor progress, and access outputs without command-line interaction, while a full command-line mode remains available for advanced users. 
 
