@@ -1,0 +1,2 @@
+GUPPY_RESULTS_DIR=/media/ddlsbioinf2/disk3/tonny/interARTICruns/Grapevine_Gingin_march_2026_GRBV/Gingin/20260408_0940_X1_FBC70458_03cef598/guppyplex_results
+RESULTS_DIR=/media/ddlsbioinf2/disk3/tonny/interARTICruns/Grapevine_Gingin_march_2026_GRBV/Gingin/20260408_0940_X1_FBC70458_03cef598/results
