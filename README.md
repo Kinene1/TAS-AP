@@ -117,7 +117,7 @@ In this case:
 
 In the tree, newly generated samples (marked ✅ Passed in the PDF report) are highlighted in grey, allowing them to be distinguished from background taxa.
 
-9.  **Exiting TAS-AP**
+9.  **Exiting TAS-AP** <br>
     Click Exit in the GUI to close the application.
 
 10.  **Re-running Analyses** 
@@ -129,5 +129,5 @@ In the tree, newly generated samples (marked ✅ Passed in the PDF report) are h
 Then repeat the steps from point 1 to start a fresh analysis.
 
 ## Acknowledgement 
-1. The TAS-AP utilises a covariance script (`covarplot`) provided via the [InterARTIC wrapper](https://github.com/Psy-Fer/interARTIC#quick-start). Credit is due to James Ferguson for making this resource publicly available.
+1. The TAS-AP utilises a covariance script (`covarplot.py`) provided via the [InterARTIC wrapper](https://github.com/Psy-Fer/interARTIC#quick-start). Credit is due to [James Ferguson](https://github.com/Psy-Fer) for making this resource publicly available.
 2. The TAS-AP leverages [Auspice](https://github.com/nextstrain/auspice) and [Augur](https://github.com/nextstrain/augur) for phylogenetic analysis, with full credit to the [Nextstrain](https://github.com/nextstrain) team for providing these open-source software.
