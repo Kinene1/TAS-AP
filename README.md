@@ -48,7 +48,7 @@ or
 </pre>
 This will open the TAS-AP GUI, allowing you to load the required inputs and run the pipeline.
 
-## <h3> Running TAS-AP on a Dataset </h3>
+## Running TAS-AP on a Dataset
 
 1.	**Select the input FASTQ directory**.
 
@@ -126,4 +126,8 @@ In the tree, newly generated samples (marked ✅ Passed in the PDF report) are h
 -  Navigate to the directory containing your `fastq_pass` directory and delete the following output directories:  <br>
      
      <pre> rm -r  results/ guppyplex_results/ </pre>
-Then repeat the steps from Section 1 to start a fresh analysis.
+Then repeat the steps from point 1 to start a fresh analysis.
+
+## Acknowledgement 
+1. The TAS-AP utilises a covariance script (`covarplot`) provided via the [InterARTIC wrapper](https://github.com/Psy-Fer/interARTIC#quick-start). Credit is due to James Ferguson for making this resource publicly available.
+2. The TAS-AP leverages [Auspice](https://github.com/nextstrain/auspice) and [Augur](https://github.com/nextstrain/augur) for phylogenetic analysis, with full credit to the [Nextstrain](https://github.com/nextstrain) team for providing these open-source software.
