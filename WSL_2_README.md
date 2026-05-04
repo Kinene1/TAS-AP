@@ -1,4 +1,4 @@
-## **Installation on Windows SubWindows Subsystem for Linux (WSL 2)**
+## **Installation on Windows Subsystem for Linux (WSL 2)**
 
 To install TAS-AP or set up an environment on Windows Subsystem for Linux (WSL 2) with an already installed Miniconda environment, follow these steps:
 
