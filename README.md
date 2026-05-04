@@ -32,7 +32,9 @@ The installation script will:
 - Generate a desktop launcher for the TAS-AP GUI
 Once the installation completes, TAS-AP can be started either from the desktop icon or via the command line.
 To launch the GUI, open **Show Applications**, click on “**Type to search**”, and enter **TAS Analysis Pipeline**.
-When the application appears in the results, click the icon to start the GUI.
+When the application appears in the results, click the icon to start the GUI. <br>
+
+Follow these instructions if you are installing on Windows Subsystem for Linux (WSL 2) with Miniconda: [TAS-AP installation on WSL2](WSL_2_README.md) 
 
 ## <h2> Running the TAS-AP remotely </h2>
 If you are accessing the application on a remote system, open a terminal and launch the GUI with one of the following commands:
@@ -46,7 +48,8 @@ or
   conda activate tas-pipeline
   Python tas_gui.py
 </pre>
-This will open the TAS-AP GUI, allowing you to load the required inputs and run the pipeline.
+This will open the TAS-AP GUI, allowing you to load the required inputs and run the pipeline. 
+
 
 ## Running TAS-AP on a Dataset
 
