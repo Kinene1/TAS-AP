@@ -23,7 +23,7 @@ cat > "$DESKTOP_FILE" <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=TAS
+Name=TAS-AP
 Exec=$APP_DIR/dist/tas_gui
 Icon=$APP_DIR/tas_icon.png
 Terminal=false
