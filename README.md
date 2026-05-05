@@ -27,8 +27,17 @@ The installation script will:
 - Set executable permissions
 - Generate a desktop launcher for the TAS-AP GUI
 Once the installation completes, TAS-AP can be started either from the desktop icon or via the command line.
-To launch the GUI, open **Show Applications**, click on “**Type to search**”, and enter **TAS Analysis Pipeline**.
+To launch the GUI, open **Show Applications**, click on “**Type to search**”, and enter **TAS-AP**.
 When the application appears in the results, click the icon to start the GUI. <br>
+
+
+Alternatively, you can install it by cloning the TAS-AP repository, as shown below.
+
+```
+git clone https://github.com/Kinene1/TAS-AP.git
+cd TAS-AP
+bash install.sh
+```
 
 Follow these instructions if you are installing on Windows Subsystem for Linux (WSL 2) with Miniconda: [TAS-AP installation on WSL2](WSL_2_README.md) 
 
