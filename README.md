@@ -1,7 +1,7 @@
 
 
 <h1 align="center">
-  <img src="TAS_AP_logo_2.png" alt="Logo" width="250"><br>
+  <img src="TAS_AP_logo_2.png" alt="Logo" width="200"><br>
   Targeted Amplicon Sequencing Analysis Pipeline (TAS-AP)
 </h1>
 
