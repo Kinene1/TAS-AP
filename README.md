@@ -144,7 +144,18 @@ In the tree, newly generated samples (marked ✅ Passed in the PDF report) are h
       rm -r  results/ guppyplex_results/
   
      ```
-Then repeat the steps from point 1 to start a fresh analysis.
+Then repeat the steps above to start a fresh analysis.
+
+## Uninstalling the analysis pipeline
+To uninstall TAS-AP run the following commands in terminal and accept at each stage. <br>
+
+```
+conda env remove -n tas-pipeline
+cd $HOME/.local/share/applications
+rm tas-gui.desktop
+cd $HOME/Desktop
+rm tas-gui.desktop
+```
 
 ## Acknowledgement 
 1. The TAS-AP utilises a covariance script (`covarplot.py`) provided via the [InterARTIC wrapper](https://github.com/Psy-Fer/interARTIC#quick-start). Credit is due to [James Ferguson](https://github.com/Psy-Fer) for making this resource publicly available.
