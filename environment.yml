@@ -1,0 +1,21 @@
+name: tas-pipeline
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - pysimplegui
+  - artic=1.6.2
+  - augur
+  - auspice
+  - mafft
+  - iqtree
+  - bc
+  - weasyprint
+  - pip
+  - pip:
+      - altgraph==0.17.5
+      - pyinstaller==6.18.0
+      - pyinstaller-hooks-contrib==2026.0
+prefix: /home/ddlsbioinf2/anaconda3/envs/tas-pipeline
