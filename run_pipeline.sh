@@ -14,7 +14,7 @@ echo "Running pipeline from: $SCRIPT_DIR"
 COVARPLOT="$SCRIPT_DIR/covarplot.py"
 
 if [[ ! -f "$COVARPLOT" ]]; then
-    echo "❌ covarplot.py not found in $SCRIPT_DIR"
+    echo "covarplot.py not found in $SCRIPT_DIR"
     exit 1
 fi
 
@@ -69,7 +69,7 @@ function wait_for_jobs {
 # ------------------------------
 # Step 1: Guppyplex
 # ------------------------------
-echo "🔄 Running guppyplex in parallel..."
+echo "Running guppyplex in parallel..."
 for BARCODE_DIR in "$BASE_DIR"/barcode*/; do
     [ -d "$BARCODE_DIR" ] || continue
     wait_for_jobs
@@ -77,7 +77,7 @@ for BARCODE_DIR in "$BASE_DIR"/barcode*/; do
     (
         BARCODE_NAME=$(basename "$BARCODE_DIR")
         PREFIX="${RUN_PREFIX}_${BARCODE_NAME}"
-        echo "  ▶️ Processing $BARCODE_NAME..."
+        echo "Processing $BARCODE_NAME..."
 
         cd "$BARCODE_DIR" || exit 1
         artic guppyplex --min-length "$MIN_LENGTH" --max-length "$MAX_LENGTH" \
@@ -90,26 +90,26 @@ for BARCODE_DIR in "$BASE_DIR"/barcode*/; do
         NEW_FASTQ="${BARCODE_OUTPUT_DIR}/${RUN_PREFIX}_${BARCODE_NAME}.fastq"
         cat "${PREFIX}_"*.fastq > "$NEW_FASTQ"
         rm -f "${PREFIX}_"*.fastq
-        echo "  ✅ Created: $NEW_FASTQ"
+        echo "Created: $NEW_FASTQ"
     ) &
 done
 wait
-echo "✅ Guppyplex done for all barcodes."
+echo "Guppyplex done for all barcodes."
 
 # ------------------------------
 # Step 2: Artic Minion #--model r1041_e82_400bps_sup_v500 \
 # ------------------------------
 echo
-echo "🚀 Running artic minion in parallel..."
+echo "Running artic minion in parallel..."
 for BARCODE_PATH in "$OUTPUT_DIR"/barcode*/; do
     wait_for_jobs
 
     (
         FASTQ_FILE=$(find "$BARCODE_PATH" -name "${RUN_PREFIX}_*.fastq" | head -n 1)
-        [ -f "$FASTQ_FILE" ] || { echo "⚠️ No FASTQ in $BARCODE_PATH"; exit 0; }
+        [ -f "$FASTQ_FILE" ] || { echo "No FASTQ in $BARCODE_PATH"; exit 0; }
 
         SAMPLE_NAME=$(basename "$FASTQ_FILE" .fastq)
-        echo "  🧬 Running artic minion for $SAMPLE_NAME..."
+        echo "Running artic minion for $SAMPLE_NAME..."
 
         cd "$BARCODE_PATH" || exit 1
         artic minion --normalise 400 --threads 8 \
@@ -117,11 +117,11 @@ for BARCODE_PATH in "$OUTPUT_DIR"/barcode*/; do
             --read-file "$(basename "$FASTQ_FILE")" \
             --bed "$BED_FILE" --ref "$REF_FILE" "$SAMPLE_NAME"
 
-        echo "  ✅ Finished artic minion: $SAMPLE_NAME"
+        echo "Finished artic minion: $SAMPLE_NAME"
     ) &
 done
 wait
-echo "✅ ARTIC minion done for all barcodes."
+echo "ARTIC minion done for all barcodes."
 
 # ------------------------------
 # Step 3: Load metadata
@@ -129,7 +129,7 @@ echo "✅ ARTIC minion done for all barcodes."
 declare -A SAMPLE_IDS
 if [[ -f "$METADATA_FILE" ]]; then
     echo
-    echo "📋 Loading metadata from $METADATA_FILE..."
+    echo "Loading metadata from $METADATA_FILE..."
     {
         read -r header
         while IFS=$'\t' read -r barcode sample_id; do
@@ -140,7 +140,7 @@ if [[ -f "$METADATA_FILE" ]]; then
         done
     } < "$METADATA_FILE"
 else
-    echo "⚠️ Metadata file not found: $METADATA_FILE"
+    echo "Metadata file not found: $METADATA_FILE"
 fi
 
 # ------------------------------
@@ -176,7 +176,7 @@ for BARCODE_DIR in "$OUTPUT_DIR"/barcode*/; do
     echo "<ul><li><strong>Sample ID:</strong> $SAMPLE_ID</li></ul>" >> "$REPORT_FILE"
 
     if [[ -f "$DEPTH1" && -f "$DEPTH2" ]]; then
-        echo "📊 Generating plot for $SAMPLE_NAME..."
+        echo "Generating plot for $SAMPLE_NAME..."
         python3 covarplot.py -d1 "$DEPTH1" -d2 "$DEPTH2" -b "$BED_FILE" -l -s "$BARCODE_DIR"
         PLOT_IMAGE=$(find "$BARCODE_DIR" -type f -name "*CoVarPlot.png" | head -n 1)
     fi
@@ -185,7 +185,7 @@ for BARCODE_DIR in "$OUTPUT_DIR"/barcode*/; do
         REL_PATH=$(realpath --relative-to="$OUTPUT_DIR" "$PLOT_IMAGE")
         echo "<img src=\"$REL_PATH\" alt=\"Coverage plot for ${BARCODE_NAME}\"><br>" >> "$REPORT_FILE"
     else
-        echo "<p style='color:red;'>❌ No plot found</p>" >> "$REPORT_FILE"
+        echo "<p style='color:red;'>No plot found</p>" >> "$REPORT_FILE"
     fi
 done
 
@@ -207,16 +207,16 @@ find "$OUTPUT_DIR" -type f -name "*.consensus.fasta" | while read -r fasta_file;
     fi
 
     cp "$fasta_file" "$TARGET"
-    echo "✅ Copied: $fasta_file -> $TARGET"
+    echo "Copied: $fasta_file -> $TARGET"
 done
 
-echo "✅ All consensus FASTA files saved to: $CONSENSUS_DIR"
+echo "All consensus FASTA files saved to: $CONSENSUS_DIR"
 
 # ------------------------------
 # Step 6: Rename FASTA files using sample IDs
 # ------------------------------
 echo
-echo "🔁 Renaming consensus FASTA files with sample IDs..."
+echo "Renaming consensus FASTA files with sample IDs..."
 for fasta_file in "$CONSENSUS_DIR"/*.fasta; do
     filename=$(basename "$fasta_file")
     barcode_id=$(echo "$filename" | sed -E 's/.*(barcode[0-9]+).*/\1/')
@@ -226,9 +226,9 @@ for fasta_file in "$CONSENSUS_DIR"/*.fasta; do
         new_name="${sample_id}_${barcode_id}.consensus.fasta"
         new_path="${CONSENSUS_DIR}/${new_name}"
         mv "$fasta_file" "$new_path"
-        echo "✅ Renamed to: $new_name"
+        echo "Renamed to: $new_name"
     else
-        echo "⚠️ No sample ID found for $filename — skipping rename"
+        echo "No sample ID found for $filename — skipping rename"
     fi
 done
 
@@ -236,7 +236,7 @@ done
 # Step 7: Genome recovery summary
 # ------------------------------
 REF_LENGTH=$(awk '/^[^>]/ { total += length } END { print total }' "$REF_FILE")
-echo "🧬 Reference genome length: $REF_LENGTH bp"
+echo "Reference genome length: $REF_LENGTH bp"
 
 DECISION_TABLE="<h2>Genome Recovery Summary</h2>
 <div style='overflow-x:auto;'>
@@ -269,9 +269,9 @@ done
 
 DECISION_TABLE+="</table></div>"
 echo "$DECISION_TABLE" >> "$REPORT_FILE"
-echo "✅ Decision table added to HTML report."
-echo "✅ CSV summary saved to: $CSV_FILE"
-echo "✅ Passed consensus FASTAs copied to: $CONSENSUS_PASSED_DIR"
+echo "Decision table added to HTML report."
+echo "CSV summary saved to: $CSV_FILE"
+echo "Passed consensus FASTAs copied to: $CONSENSUS_PASSED_DIR"
 
 # ------------------------------
 # Footer and PDF
@@ -286,16 +286,16 @@ echo "✅ Passed consensus FASTAs copied to: $CONSENSUS_PASSED_DIR"
     echo "</body></html>"
 } >> "$REPORT_FILE"
 
-echo "✅ HTML report saved to: $REPORT_FILE"
+echo "HTML report saved to: $REPORT_FILE"
 
 echo
-echo "📄 Generating PDF..."
+echo "Generating PDF..."
 if command -v weasyprint &> /dev/null; then
     weasyprint "$REPORT_FILE" "${OUTPUT_DIR}/coverage_summary_report.pdf"
-    echo "✅ PDF saved to: $PDF_REPORT"
+    echo "PDF saved to: $PDF_REPORT"
 else
-    echo "⚠️ WeasyPrint not found. Install with: pip install weasyprint"
+    echo "WeasyPrint not found. Install with: pip install weasyprint"
 fi
 
 echo
-echo "🎉 All processing complete!"
+echo "All processing complete!"
