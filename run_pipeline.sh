@@ -7,7 +7,7 @@ set -euo pipefail
 #-----------------------------------------------------------------------
 # DPIRD DIagnostics and Laboratory Services
 # Sustainability and Biosecurity 
-# Department of primary Industires and Regional Development
+# Department of Primary Industries and Regional Development
 # 31 Cedric Street, Stirling WA 6021
 # ----------------------------------------------------------------------
 
