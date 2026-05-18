@@ -3,7 +3,34 @@ set -euo pipefail
 
 export PATH="$CONDA_PREFIX/bin:$PATH"
 
-echo "🧬 Starting phylogeny..."
+echo "Starting phylogeny..."
+
+
+# Tonny Kinene (Tonny.Kinene@dpird.wa.gov.au)
+
+#-----------------------------------------------------------------------
+# DPIRD DIagnostics and Laboratory Services
+# Sustainability and Biosecurity 
+# Department of Primary Industries and Regional Development
+# 31 Cedric Street, Stirling WA 6021
+# ----------------------------------------------------------------------
+
+# Copyright (c) 2026 Tonny Kinene
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+#------------------------------------------------------------------------
+
 
 # ============================================================
 # Locate config file (same directory as this script / GUI)
@@ -12,12 +39,12 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_FILE="${SCRIPT_DIR}/last_run_info.txt"
 
 if [[ ! -f "$CONFIG_FILE" ]]; then
-  echo "❌ ERROR: last_run_info.txt not found in $SCRIPT_DIR"
+  echo "ERROR: last_run_info.txt not found in $SCRIPT_DIR"
   echo "Run the main pipeline from the GUI first."
   exit 1
 fi
 
-echo "📄 Loading run configuration from: $CONFIG_FILE"
+echo "Loading run configuration from: $CONFIG_FILE"
 
 # Load variables from config
 source "$CONFIG_FILE"
@@ -28,9 +55,9 @@ source "$CONFIG_FILE"
 
 CONSENSUS_DIR="${GUPPY_RESULTS_DIR}/consensus_passed"
 
-echo "📂 Guppyplex results dir: $GUPPY_RESULTS_DIR"
-echo "📂 Results dir: $RESULTS_DIR"
-echo "📂 Consensus dir: $CONSENSUS_DIR"
+echo "Guppyplex results dir: $GUPPY_RESULTS_DIR"
+echo "Results dir: $RESULTS_DIR"
+echo "Consensus dir: $CONSENSUS_DIR"
 
 # ============================================================
 # Determine run folder (parent of results/ and guppyplex_results/)
@@ -40,8 +67,8 @@ RUN_DIR="$(dirname "$RESULTS_DIR")"
 # tree_augur is now inside the run folder
 TREE_DIR="${RUN_DIR}/tree_augur"
 
-echo "📂 Run folder: $RUN_DIR"
-echo "📂 tree_augur dir: $TREE_DIR"
+echo "Run folder: $RUN_DIR"
+echo "tree_augur dir: $TREE_DIR"
 
 # ============================================================
 # Static tree resources (inside run_folder/tree_augur/)
@@ -68,27 +95,27 @@ AUSPICE_JSON="$RESULTS_DIR/auspice.json"
 # Step 0. Input checks
 # ============================================================
 if [[ ! -d "$CONSENSUS_DIR" ]]; then
-  echo "❌ ERROR: Consensus directory not found: $CONSENSUS_DIR"
+  echo "ERROR: Consensus directory not found: $CONSENSUS_DIR"
   exit 1
 fi
 
 if [[ ! -d "$TREE_DIR" ]]; then
-  echo "❌ ERROR: tree_augur directory not found: $TREE_DIR"
+  echo "ERROR: tree_augur directory not found: $TREE_DIR"
   exit 1
 fi
 
 if [[ ! -f "$EXISTING_ALIGNMENT" ]]; then
-  echo "❌ ERROR: Existing alignment not found: $EXISTING_ALIGNMENT"
+  echo "ERROR: Existing alignment not found: $EXISTING_ALIGNMENT"
   exit 1
 fi
 
 if [[ ! -f "$METADATA" ]]; then
-  echo "❌ ERROR: Metadata file not found: $METADATA"
+  echo "ERROR: Metadata file not found: $METADATA"
   exit 1
 fi
 
 if [[ ! -f "$COLORS" ]]; then
-  echo "❌ ERROR: Colors file not found: $COLORS"
+  echo "ERROR: Colors file not found: $COLORS"
   exit 1
 fi
 
@@ -114,7 +141,7 @@ for fasta in "$CONSENSUS_DIR"/*.fasta; do
 done
 
 if [[ "$found_any" = false ]]; then
-  echo "❌ ERROR: No FASTA files found in $CONSENSUS_DIR"
+  echo "ERROR: No FASTA files found in $CONSENSUS_DIR"
   exit 1
 fi
 
@@ -199,7 +226,7 @@ echo "[7/9] Export complete: $AUSPICE_JSON"
 # Step 8. Launch Auspice
 # ============================================================
 echo "[8/9] Launching Auspice viewer..."
-echo "🌐 Open http://127.0.0.1:4000 in your browser"
+echo "Open http://127.0.0.1:4000 in your browser"
 
 HOST=127.0.0.1 auspice view --datasetDir "$RESULTS_DIR"
 
