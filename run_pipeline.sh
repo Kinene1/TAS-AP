@@ -2,6 +2,32 @@
 
 set -euo pipefail
 
+# Tonny Kinene (Tonny.Kinene@dpird.wa.gov.au)
+
+#-----------------------------------------------------------------------
+# DPIRD DIagnostics and Laboratory Services
+# Sustainability and Biosecurity 
+# Department of primary Industires and Regional Development
+# 31 Cedric Street, Stirling WA 6021
+# ----------------------------------------------------------------------
+
+# Copyright (c) 2026 Tonny Kinene
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+#------------------------------------------------------------------------
+
+
 # --------------------------------------------------
 # Resolve script directory (for GUI / PyInstaller runs)
 # --------------------------------------------------
@@ -196,7 +222,7 @@ CONSENSUS_DIR="${OUTPUT_DIR}/consensus_seq"
 mkdir -p "$CONSENSUS_DIR"
 
 echo
-echo "📦 Collecting consensus FASTA files..."
+echo "Collecting consensus FASTA files..."
 find "$OUTPUT_DIR" -type f -name "*.consensus.fasta" | while read -r fasta_file; do
     SAMPLE_NAME=$(basename "$fasta_file")
     TARGET="${CONSENSUS_DIR}/${SAMPLE_NAME}"
